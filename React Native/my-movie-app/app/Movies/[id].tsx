@@ -6,12 +6,12 @@ import {fetchMovieDetails} from "@/Services/api";
 import {icons} from "@/constants/icons";
 import {images} from "@/constants/images";
 
-const MovieDetails = ()=> {
+const MovieDetails = () => {
     const {id} = useLocalSearchParams();
 
     const {data: movie, loading} = useFetch(() => fetchMovieDetails(id as string));
 
-    interface MovieInfoProps{
+    interface MovieInfoProps {
         label: string;
         value?: string | number | null;
     }
@@ -33,7 +33,8 @@ const MovieDetails = ()=> {
                 paddingBottom: 80
             }}>
                 <View>
-                    <Image source={{uri: `https://image.tmdb.org/t/p/w500${movie?.poster_path}`}} className="w-full h-[500px]" resizeMode="stretch"/>
+                    <Image source={{uri: `https://image.tmdb.org/t/p/w500${movie?.poster_path}`}}
+                           className="w-full h-[500px]" resizeMode="stretch"/>
                 </View>
 
                 <View className="flex-col items-start justify-center mt-5 px-5">
@@ -55,15 +56,11 @@ const MovieDetails = ()=> {
                     </Text>
                 </View>
 
-                <MovieInfo label="Overview" value={movie?.overview} />
-                <MovieInfo label="Genres" value={movie?.genres?.map((g) => g.name).join(' - ') || 'N/A'} />
+                <MovieInfo label="Overview" value={movie?.overview}/>
+                <MovieInfo label="Genres" value={movie?.genres?.map((g) => g.name).join(' - ') || 'N/A'}/>
 
-                <View className="flex flex-row justify-between w-1/2">
-                    <MovieInfo label="Budget" value={`$${movie?.budget / 1_000_000} million`} />
-                    <MovieInfo label="Revenue" value={`$${Math.round(movie?.revenue) / 1_000_000}`} />
-                </View>
-
-                <MovieInfo label="Production Companies" value={movie?.production_companies.map((p) => p.name).join(' - ') || 'N/A'} />
+                <MovieInfo label="Production Companies"
+                           value={movie?.production_companies.map((p) => p.name).join(' - ') || 'N/A'}/>
 
             </ScrollView>
             <TouchableOpacity
@@ -75,7 +72,7 @@ const MovieDetails = ()=> {
                     className="size-5 mr-1 mt-0.5 rotate-180"
                     tintColor="#fff"
                 />
-                <Text className="test-white font-semibold text-base">Go back</Text>
+                <Text className="text-white font-semibold text-base">Go back</Text>
             </TouchableOpacity>
         </View>
     );

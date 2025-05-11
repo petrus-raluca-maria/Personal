@@ -43,7 +43,7 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
     }
 }
 
-export const getTrendingMovies = async(): Promise<TrendingMovie[] | undefined> => {
+export const getTrendingMovies = async (): Promise<TrendingMovie[] | undefined> => {
     try {
         const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
             Query.limit(5),
@@ -59,7 +59,7 @@ export const getTrendingMovies = async(): Promise<TrendingMovie[] | undefined> =
 
 // check if a record of that search has already been stored
 
-    // if a document is found increment the searchCount field
+// if a document is found increment the searchCount field
 
-    // in no document is found c
-        // create a new document in Appwrite database -> 1
+// in no document is found c
+// create a new document in Appwrite database -> 1

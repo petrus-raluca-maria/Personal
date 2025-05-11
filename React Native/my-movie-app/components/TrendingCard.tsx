@@ -1,10 +1,10 @@
-import { Text, TouchableOpacity, View, Image } from "react-native";
+import {Text, TouchableOpacity, View, Image} from "react-native";
 import React from 'react';
 import {Link} from "expo-router";
 import MaskedView from '@react-native-masked-view/masked-view';
 import {images} from "@/constants/images";
 
-const TendingCard = ({movie: {movie_id, title, poster_url}, index}: TrendingCardProps)=> {
+const TendingCard = ({movie: {movie_id, title, poster_url}, index}: TrendingCardProps) => {
     return (
         <Link href={`/Movies/${movie_id}`} asChild>
             <TouchableOpacity className="w-32 relative pl-5">

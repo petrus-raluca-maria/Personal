@@ -5,7 +5,7 @@ import React from "react";
 import {icons} from "@/constants/icons";
 
 const TabIcon = ({focused, icon, title}: any) => {
-    if(focused) {
+    if (focused) {
         return (
             <ImageBackground
                 source={images.highlight}
@@ -26,7 +26,7 @@ const TabIcon = ({focused, icon, title}: any) => {
     )
 }
 
-const _Layout = ()=> {
+const _Layout = () => {
     return (
         <Tabs
             screenOptions={{
@@ -41,7 +41,7 @@ const _Layout = ()=> {
                     backgroundColor: '#0f0D23',
                     borderRadius: 50,
                     marginHorizontal: 10,
-                    marginBottom:36,
+                    marginBottom: 36,
                     height: 52,
                     position: 'absolute',
                     overflow: 'hidden',
